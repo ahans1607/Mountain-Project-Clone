@@ -1,3 +1,17 @@
-.nav-login {
-    color: blue
+#navHome {
+    background-color: black;
+    color: white;
+    height: 250px;
+    
 }
+
+.navStuff {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+

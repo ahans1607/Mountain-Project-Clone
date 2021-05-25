@@ -1,8 +1,13 @@
 /* TODO Add site wide styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
-
 body {
-    background-color:cornflowerblue;
+    background-image: url("../src/images/background-img.jpg");
     font-family: 'Comfortaa';
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    background-color: blanchedalmond;
+    color: #000;
 }
