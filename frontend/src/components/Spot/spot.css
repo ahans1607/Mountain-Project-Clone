@@ -1,0 +1,21 @@
+.master-div {
+    display: flex;
+    justify-content: center;
+}
+
+.spot-container {
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    height: max-content;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 25px;
+}
+
+h1 {
+    color: white;
+    font-family: fantasy;
+}
+

@@ -18,9 +18,15 @@ const Spot = ({spot}) => {
     return (
         <>
             <div className="master-div">
-                <div className="spot-container">
-                    {spot.description}
-                </div>
+                <button className="spot-container">
+                    <div>
+                        <Link to={`spots/${spot.id}`}>
+                            <div>
+                                <h1> {spot.name} </h1>
+                            </div>
+                        </Link>
+                    </div>
+                </button>
             </div>
 
         </>

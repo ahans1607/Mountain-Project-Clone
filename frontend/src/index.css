@@ -4,6 +4,8 @@ body {
     background-image: url("https://graffitiwallpaper.com/pics/listings/150_wide.jpg");
     background-size: cover;
     overflow: hidden;
+    color: white;
+    font-family: fantasy;
 }
 
 form {
