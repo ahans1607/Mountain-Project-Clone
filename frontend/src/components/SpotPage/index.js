@@ -1,28 +1,35 @@
 import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getSpots, spotsReducer } from '../../store/spots';
-import './spot.css';
+import './spotPage.css';
 
-const Spot = ({spot}) => {
+const SpotPage = () => {
     const dispatch = useDispatch();
 
+    const Spots = useSelector(state => state.spots)
+    const { spotsId } = useParams();
+
+    
+    const spot = Spots.find(s => s.id === +spotsId)
+    //useParams comes in as text not as a number
+    
     useEffect(() => {
         dispatch(getSpots())
     }, [dispatch]);
-
-
+    
+    if(!spot) return (
+        <h1> Spot not found </h1>
+    )
+    
+    
 
     return (
         <>
             <div className="master-div">
                 <button className="spot-container">
                     <div>
-                        <Link to={`spots/${spot.id}`} style={{textDecoration: 'none'}}>
-                            <div>
-                                <h1> {spot.name} </h1>
-                            </div>
-                        </Link>
+                        {spot.location}
                     </div>
                 </button>
             </div>
@@ -32,4 +39,4 @@ const Spot = ({spot}) => {
 
 }
 
-export default Spot;
+export default SpotPage;

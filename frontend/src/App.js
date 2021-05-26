@@ -7,6 +7,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
+import SpotPage from "./components/SpotPage"
 
 
 function App() {
@@ -24,14 +25,19 @@ function App() {
           <Route exact path ='/'>
               <Homepage/>
           </Route>
+
+          <Route path="/spots/:spotsId">
+              <SpotPage/>
+          </Route>
+
           <Route path="/login">
             <LoginFormModal />
-            {/* ^^ can i just add css classes here?
-              This would assign the styling  */}
           </Route>
+
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+
         </Switch>
       )}
     </>
