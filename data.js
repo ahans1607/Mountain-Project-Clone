@@ -3,7 +3,7 @@
         {
           name: "Zodiac",
           userId: 1,
-          picture: "",
+          picture: "/images/zodiac1.jpeg,/images/zodiac2.jpeg,/images/zodiac3.jpeg",
           description:
           "This route was FA'd in November 1972 by Charlie Porter on his third attempt. SE side of El Cap, just east of the pipe boulder. The start a hook to a short bolt ladder to an obvious 90' right-facing flake, from there to an anchor situated under a 30inch roof. Get the SuperTaco guide book for the best topo's, stories and beta. Near the parking area at the Meadow, there is a large boulder field running nearly all the way down the slope. This is a great access line to check out the base of the climb, or perhaps return to the vehicle for the next load of gear. However, this is not the best way to approach the climb with anything resembling a load of anything. I did it once with a loaded haul bag, but I was still young and dumb then. The best approach also departs from the parking area at the Meadow, heads a short distance west along the road, then due north along the obvious trail to the base of the Nose. Follow the trail as it skirts around the base of the wall to the east. Even though you are not yet on the wall, it would be prudent to wear a lid while anywhere near the base, as something could be dropped or knocked loose at any time from above. On one occasion, I happened to booty a #12 Wallnut that hit the ground not far from where I was standing, the climbers far enough up the stone to be out of sight. Beware of bears, and do not pack food to the base until you have fixed the first pitch or two and are ready to haul. On one occasion, we hung the haul bags from a rivit at the base of ZM 20feet off the ground. While I was fixing pitches above (and my partner off to hike in another load), a savvy bear stood on his hind legs and managed to physically remove the bag from the wall, tearing a 6inch hole in the side of the bag and rummaging through just to see if there were any goodies to be found. Trowing pitons at him from above did little to discourage him, the bag will forever carry those scars.",          
           location: "California > Yosemite National Park > Yosemite Valley > Valley North Side > El Capitan",
@@ -15,7 +15,7 @@
         {
             name: "Spaceshot",
             userId: 2,
-            picture: "",
+            picture: "/images/SpaceShot1.jpeg,/images/SpaceShot2.jpeg,/images/SpacShot3.gif",
             description:
             "I don't know...unless it's 1000 feet off the deck, C1 can be pretty monotonous. In any case, this route is worth doing for the exposure on the last pitch alone! It is also a good practice route for bigger and better things. \
             I understand this can be a pretty crowded route on weekends so if you're planning on doing a one day ascent, you might as well forget about it if you get behind a party that's hauling. It gets good sun (SW facing) so it can be done comfortably in cooler weather. \
@@ -38,7 +38,7 @@
           {
             name: "Ham & Eggs",
             userId: 3,
-            picture: "",
+            picture: "/images/ham&eggs1.jpeg,/images/ham&eggs2.jpeg,/images/eggs&ham3.jpeg",
             description:
             "One of the best, some parties can do it in 4 hours some take two days. Short crux to enter the weakness propper and then steep snow and the intermittent ice pitch till mid height. Then three to four great solid ice pitches to access the upper bowles. Rappels were set for for 100' raps when we did her. But doubles should be mandatory to get down in any kind of decent time.\
             Access by flying into the Route Canal Glaicer. Or go old school from the Mountain House and Hump ur ass off.\
@@ -52,7 +52,7 @@
           {
             name: "Exum Ridge",
             userId: 4,
-            picture: "",
+            picture: "/images/exumRidge1.jpeg,/images/exumRidge2.jpeg,/images/exumRidge3.jpeg",
             description:
             "Your first goal is to reach Wall Street, a giant ledge leading to the crest of the south ridge from the west at around 12,800'. This ledge can be easily viewed from the Lower Saddle if you know where to look. Begin from the Lower Saddle as for the Owen Spalding, passing left of the smooth pinnacle known as 'The Needle', then up the gully on the right, close to the Needle. If you are lucky you will find the tunnel above here known as 'The Eye of The Needle', but it is not necessary to pass through this feature. Above here your route diverges from the Owen Spalding as you traverse right, crossing a broad and relatively easy couloir to the start of Wall Street. This couloir drops straight down from the Upper Saddle and has led to disaster for many tired climbers descending from the Upper Saddle, assuming it is the way down (it cliffs out). Take note of it.\
             The Wall Street ledge is huge and easy to walk along, until the very end where it suddenly becomes exposed and narrow. Rope up here, unless you feel like repeating Glenn Exum's famous leap. Actually, I've never seen anyone leap to span this difficulty, as you can simply make a long step or hand traverse. Still, it is very exposed and only climbers in a great hurry will do this unroped.\
@@ -71,7 +71,7 @@
           {
             name: "Solar Slab",
             userId: 5,
-            picture: "",
+            picture: "/images/solarSlab1.jpeg,/images/solarSlab2.jpeg,/images/SpacShot3.gif",
             description:
             "Solar Slab is a very popular route due to its long length and all pitches are 5.6 or easier. The climb is 9 pitches long and over 1200 feet in height. However, the start of Solar Slab is on a huge terrace 500 feet up, which has a few different multi-pitch approaches. Probably the most common ways to get to the base of Solar Slab are to climb Johnny Vegas (5.7, 4 pitches), or the Solar Slab Gully (5.3, 5 pitches). An early start is highly recommended to beat the crowds, climb the 14 pitches, and make the lengthy descent. A headlamp is also a good idea.\
             Start from the Oak Creek Canyon parking area, and follow the obvious trail for 45 minutes to an hour. A prominent trail leads to an obvious gully to the right, the Solar Slab Gully. Climb this or Johnny Vegas to the terrace 500 feet up.\
