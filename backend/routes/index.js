@@ -6,9 +6,15 @@
     // and export the router at the bottom of the file.
 
 const express = require('express');
+const spot = require('../db/models/spot');
 const router = express.Router();
 
 const apiRouter = require('./api');
+
+
+
+
+
 
 router.use('/api', apiRouter);
 // ^^ all of the URLs of the routes in the api router

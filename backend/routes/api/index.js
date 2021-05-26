@@ -4,10 +4,27 @@ const router = require('express').Router();
 
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const spotsRouter = require('./spots.js')
 
 router.use('/session', sessionRouter);
-
 router.use('/users', usersRouter);
+router.use('/spots', spotsRouter);
+
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
 //^^ connects all the routes exported from the session and users files
 
 // router.post('/test', function(req, res) {
@@ -65,6 +82,3 @@ router.use('/users', usersRouter);
                             //   }
                             // );
                             // ^^ test for requireAuth - if no session user the route will return an "Unauthorized" error
-
-
-module.exports = router;

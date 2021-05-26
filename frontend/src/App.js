@@ -6,6 +6,8 @@ import LoginFormModal from "./components/LoginFormModal/LoginForm";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Homepage from "./components/Homepage";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +21,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path ='/'>
+              <Homepage/>
+          </Route>
           <Route path="/login">
             <LoginFormModal />
             {/* ^^ can i just add css classes here?
