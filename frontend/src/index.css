@@ -1,13 +1,14 @@
 /* TODO Add site wide styles */
 
 body {
-    background-image: url("https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683_960_720.png");
-    font-family: 'Comfortaa';
+    background-image: url("https://graffitiwallpaper.com/pics/listings/150_wide.jpg");
+    background-size: cover;
+    overflow: hidden;
 }
 
 form {
     display: flex;
     justify-content: center;
-    background-color: blanchedalmond;
+    background-color: none;
     color: #000;
 }

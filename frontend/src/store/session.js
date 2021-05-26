@@ -82,16 +82,4 @@ const sessionReducer = (state = initialState, action) => {
 
 export default sessionReducer;
 
-// {
-//     user: {
-//       id,
-//       email,
-//       username,
-//       createdAt,
-//       updatedAt
-//     }
-//   }
 
-//   {
-//     user: null
-//   }
