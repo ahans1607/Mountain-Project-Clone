@@ -37,7 +37,7 @@
           },
           {
             name: "Ham & Eggs",
-            userId: 4,
+            userId: 3,
             picture: "",
             description:
             "One of the best, some parties can do it in 4 hours some take two days. Short crux to enter the weakness propper and then steep snow and the intermittent ice pitch till mid height. Then three to four great solid ice pitches to access the upper bowles. Rappels were set for for 100' raps when we did her. But doubles should be mandatory to get down in any kind of decent time.\
@@ -51,7 +51,7 @@
           },
           {
             name: "Exum Ridge",
-            userId: 5,
+            userId: 4,
             picture: "",
             description:
             "Your first goal is to reach Wall Street, a giant ledge leading to the crest of the south ridge from the west at around 12,800'. This ledge can be easily viewed from the Lower Saddle if you know where to look. Begin from the Lower Saddle as for the Owen Spalding, passing left of the smooth pinnacle known as 'The Needle', then up the gully on the right, close to the Needle. If you are lucky you will find the tunnel above here known as 'The Eye of The Needle', but it is not necessary to pass through this feature. Above here your route diverges from the Owen Spalding as you traverse right, crossing a broad and relatively easy couloir to the start of Wall Street. This couloir drops straight down from the Upper Saddle and has led to disaster for many tired climbers descending from the Upper Saddle, assuming it is the way down (it cliffs out). Take note of it.\
