@@ -66,11 +66,12 @@ router.post(
 
     asyncHandler(async (req, res) => {
         //using the asyncHandler fn
-      const { email, password, username } = req.body;
+      const { email, password, username, firstName, lastName } = req.body;
+      console.log(firstName, lastName)
       // ^^ this route expects the req.body to have these keys
       // validateSignup middleware will check and validate these keys
 
-      const user = await User.signup({ email, username, password });
+      const user = await User.signup({ email, username, password, firstName, lastName });
       // ^^ call the signup static method on the User model
 
       await setTokenCookie(res, user);

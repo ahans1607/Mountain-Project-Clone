@@ -1,9 +1,14 @@
-.spot-container{
-    display: block;
-    justify-content: center;
-    flex-direction: column;
+.spot-container2{
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    width: 500px;
+    border-radius: 25px;
     overflow: scroll;
-    max-height: 2000px;
+    height: 500px;
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .spotName{

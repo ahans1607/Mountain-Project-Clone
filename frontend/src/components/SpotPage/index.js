@@ -27,7 +27,7 @@ const SpotPage = () => {
     return (
         <>
             <div className="master-div">
-                <div className="spot-container">
+                <div className="spot-container2">
                         <h1 className="spotName"> {spot.name} </h1>
 
                             <div className="spotLocation">
