@@ -27,11 +27,34 @@ const SpotPage = () => {
     return (
         <>
             <div className="master-div">
-                <button className="spot-container">
-                    <div>
-                        {spot.location}
-                    </div>
-                </button>
+                <div className="spot-container">
+                        <h1 className="spotName"> {spot.name} </h1>
+
+                            
+
+                            <div className="spotLocation">
+                                <h2>Location: {spot.location}</h2>
+                            </div>
+
+                            <div className="spotType">
+                                <p>Type: {spot.type}</p>
+                            </div>
+
+                            <div className="spotGrade">
+                                <p>Grade: {spot.grade}</p>
+                            </div>
+
+                            <div className="spotDes">
+                                <p>Description: {spot.description} </p>
+                            </div>
+                            
+                            <div className="spotPics">
+                                {spot.picture.split(",").map((pic) => (
+                                    <img src={pic} alt={spot.name}></img>
+                                ))}
+                            </div>
+
+                </div>
             </div>
 
         </>

@@ -1,0 +1,12 @@
+.spot-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.spotName{
+    display: flex;
+    justify-content: center;
+}
+
