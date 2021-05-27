@@ -30,8 +30,6 @@ const SpotPage = () => {
                 <div className="spot-container">
                         <h1 className="spotName"> {spot.name} </h1>
 
-                            
-
                             <div className="spotLocation">
                                 <h2>Location: {spot.location}</h2>
                             </div>
@@ -48,11 +46,11 @@ const SpotPage = () => {
                                 <p>Description: {spot.description} </p>
                             </div>
                             
-                            <div className="spotPics">
+                            {/* <div className="spotPics">
                                 {spot.picture.split(",").map((pic) => (
                                     <img src={pic} alt={spot.name}></img>
                                 ))}
-                            </div>
+                            </div> */}
 
                 </div>
             </div>

@@ -6,6 +6,9 @@ body {
     overflow: hidden;
     color: white;
     font-family: fantasy;
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 250px;
 }
 
 form {

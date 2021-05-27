@@ -1,6 +1,7 @@
 .master-div {
     display: flex;
     justify-content: center;
+    overflow-y: scroll;
 }
 
 .spot-container {
@@ -10,7 +11,7 @@
     height: max-content;
     width: 500px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     border-radius: 25px;
 }
 

@@ -1,9 +1,11 @@
 #navHome {
-    background-color: black;
+    background-color: rgba(0, 0, 0, .2);
     color: white;
-    height: 150px;
-    
-    
+    position: fixed;
+    height: 200px;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .navStuff {
