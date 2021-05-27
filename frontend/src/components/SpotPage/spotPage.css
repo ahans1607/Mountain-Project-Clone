@@ -3,7 +3,6 @@
     justify-content: center;
     flex-direction: column;
     overflow: scroll;
-    height: 2000px;
     max-height: 2000px;
 }
 
