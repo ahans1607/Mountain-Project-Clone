@@ -19,8 +19,7 @@ router.get('/', asyncHandler(async (req, res) => {
 //make new review
 router.post('/', restoreUser, asyncHandler(async (req, res) => {
     const { content, userId, spotId } = req.body;
-    const userId = req.user.id
-    const name = req.user.username
+    // const name = req.user.username
     
     const newReview = await Review.create({ content, userId: userId, spotId:spotId });
 
@@ -37,7 +36,7 @@ router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
         const updatedReview = await Review.findByPk()
         updatedReview.description = newDescription
-        await reviewToUpdate.save()
+        await updatedReview.save()
 
     }
 
@@ -56,3 +55,5 @@ router.delete('/', restoreUser, asyncHandler(async (req, res) => {
     const reviews = await Review.findAll()
     return res.json(reviews)
 }))
+
+module.exports = router;

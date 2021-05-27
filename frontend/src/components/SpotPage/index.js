@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSpots, spotsReducer } from '../../store/spots';
+import ReviewForm from "../ReviewForm"
+import ReviewContent from "../ReviewDisplay"
 import './spotPage.css';
+import ReviewDisplay from '../ReviewDisplay';
 
 const SpotPage = () => {
     const dispatch = useDispatch();
@@ -51,7 +54,12 @@ const SpotPage = () => {
                                     <img src={pic} alt={spot.name}></img>
                                 ))}
                             </div> */}
-
+                </div>
+                <div className="reviewForm">
+                    <ReviewForm spotId={spotsId}/>
+                </div>
+                <div className="reviewDisplay">
+                    <ReviewDisplay />
                 </div>
             </div>
 

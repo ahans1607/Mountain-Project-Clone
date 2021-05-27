@@ -3,6 +3,8 @@ import { csrfFetch } from './csrf';
 //actions
 const LOAD = "reviews/LOAD";
 const ADD = "reviews/ADD";
+const EDIT = "reviews/EDIT";
+const DELETE = "reviews/DELETE"
 
 //action creators
 const load = list => ({
@@ -13,7 +15,17 @@ const load = list => ({
 const add = newReview => ({
     type: ADD,
     newReview
-})
+});
+
+const edit = editedReview => ({
+    type: ADD,
+    editedReview
+});
+
+// const delete = newReview => ({
+//     type: ADD,
+//     newReview
+// })
 
 
 export const getReviews = () => async (dispatch) => {
@@ -27,6 +39,7 @@ export const getReviews = () => async (dispatch) => {
 
 export const addReview = (newReview) => async (dispatch) => {
     newReview = JSON.stringify(newReview)
+    console.log(newReview)
     const res = await csrfFetch(`/api/reviews`, {
         method: "POST",
         body: newReview,
