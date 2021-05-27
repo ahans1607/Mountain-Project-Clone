@@ -1,8 +1,39 @@
+.master-div{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.spot-container1{
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    width: 250px;
+    border-radius: 25px;
+    overflow: scroll;
+    height: 500px;
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .spot-container2{
     border: 3px solid white;
     background-color: rgba(0, 0, 0, .5);
     color: white;
     width: 500px;
+    border-radius: 25px;
+    overflow: scroll;
+    height: 500px;
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.spot-container3{
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    width: 250px;
     border-radius: 25px;
     overflow: scroll;
     height: 500px;

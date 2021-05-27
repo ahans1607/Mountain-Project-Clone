@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReviews } from '../../store/review';
+import { getReviews, editReview, deleteReview } from '../../store/review';
 import './reviewDisplay.css';
 
 export default function ReviewDisplay() {
@@ -13,6 +13,14 @@ export default function ReviewDisplay() {
         dispatch(getReviews())
     }, [dispatch])
 
+    useEffect(() => {
+        dispatch(editReview())
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(deleteReview())
+    }, [dispatch])
+
     return (
         <div className="reviewContainer">
             <div className="reviewTitle">
@@ -20,7 +28,10 @@ export default function ReviewDisplay() {
             </div>
             <div className="reviewContent">
                 {reviews.map((review) => 
-                    <p>{review.content}</p>
+                    <p>{review.content}
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </p>
                 )}
             </div>
         </div>

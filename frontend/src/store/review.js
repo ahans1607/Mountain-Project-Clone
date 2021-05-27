@@ -22,10 +22,10 @@ const edit = editedReview => ({
     editedReview
 });
 
-// const delete = newReview => ({
-//     type: ADD,
-//     newReview
-// })
+const del = reviewId => ({
+    type: DELETE,
+    reviewId
+})
 
 
 export const getReviews = () => async (dispatch) => {
@@ -54,6 +54,41 @@ export const addReview = (newReview) => async (dispatch) => {
     }
 };
 
+export const deleteReview = (review) => async (dispatch) => {
+    const { id } = review
+    review = JSON.stringify(review)
+    const res = await csrfFetch(`/api/reviews/`, {
+        method: "DELETE",
+        body: review,
+        headers: {
+            'Content-Type': "application/json"
+        }
+    })
+    if (res.ok) {
+        const reviews = await res.json();
+        dispatch(load(reviews));
+        return reviews
+    }
+
+}
+
+
+export const editReview = (newReview) => async (dispatch) => {
+    newReview = JSON.stringify(newReview)
+    const res = await csrfFetch(`/api/reviews`, {
+        method: "PUT",
+        body: newReview,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    if (res.ok) {
+        const reviews = await res.json();
+        dispatch(load(reviews));
+        return reviews
+    }
+};
+
 
 const initialState = {};
 
@@ -62,7 +97,7 @@ const reviewsReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
             const allReviews = {};
-            action.list && action.list.forEach(review => {
+            action.list.forEach(review => {
                 allReviews[review.id] = review;
             });
             return {
@@ -76,6 +111,19 @@ const reviewsReducer = (state = initialState, action) => {
             newState[action.newReview] = action.newReview
             return newState
         }
+
+        case DELETE: {
+            const newState = { ...state }
+            delete newState[action.reviewId]
+            return newState
+        }
+        
+        case EDIT: {
+            const newState = { ...state }
+            newState[action.newReview] = action.newReview
+            return newState
+        }
+
 
         default:
             return state

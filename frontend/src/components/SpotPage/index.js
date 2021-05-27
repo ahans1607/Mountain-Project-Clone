@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSpots, spotsReducer } from '../../store/spots';
+import { getSpots } from '../../store/spots';
 import ReviewForm from "../ReviewForm"
 import ReviewContent from "../ReviewDisplay"
 import './spotPage.css';
@@ -30,6 +30,13 @@ const SpotPage = () => {
     return (
         <>
             <div className="master-div">
+                <div className="spot-container1">
+                        <div className="spotPics">
+                                {spot.picture.split(",").map((pic) => (
+                                    <img src={pic} alt={spot.name}></img>
+                                ))}
+                        </div>
+                </div>
                 <div className="spot-container2">
                         <h1 className="spotName"> {spot.name} </h1>
 
@@ -48,19 +55,15 @@ const SpotPage = () => {
                             <div className="spotDes">
                                 <p>Description: {spot.description} </p>
                             </div>
-                            
-                            {/* <div className="spotPics">
-                                {spot.picture.split(",").map((pic) => (
-                                    <img src={pic} alt={spot.name}></img>
-                                ))}
-                            </div> */}
                 </div>
-                <div className="reviewForm">
-                    <ReviewForm spotId={spotsId}/>
+
+                <div className="spot-container3">
+                    <div className="reviews">
+                        <ReviewForm spotId={spotsId}/>
+                        <ReviewDisplay />
+                    </div>
                 </div>
-                <div className="reviewDisplay">
-                    <ReviewDisplay />
-                </div>
+                
             </div>
 
         </>

@@ -35,7 +35,7 @@ router.put('/', restoreUser, asyncHandler(async (req, res) => {
         const { newDescription } = req.body
 
         const updatedReview = await Review.findByPk()
-        updatedReview.description = newDescription
+        updatedReview.content = newContent
         await updatedReview.save()
 
     }

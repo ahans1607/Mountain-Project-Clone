@@ -32,7 +32,10 @@ function ReviewForm({spotId}) {
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
         <label>
-          Review
+          <h3>
+            Have you been here?
+              Add a Review
+            </h3>
           <textarea
             type="textarea"
             value={review} 
