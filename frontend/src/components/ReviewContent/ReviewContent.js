@@ -11,25 +11,29 @@ export default function ReviewContent({reviewId, spotId}) {
     const reviews = useSelector((state) => Object.values(state.reviews))
     const userId = useSelector((state) => state.session.user.id)
 
-    const filterdReviews = reviews.filter((singleReview) => (
-        singleReview.spotId === +spotId
-    ))
+    const filterdReviews = reviews.filter((singleReview) => {
+        if (!singleReview){
+            return null;
+        }
+        return singleReview.spotId === +spotId
+    })
 
     
     useEffect(() => {
         dispatch(getReviews())
     }, [dispatch])
     
-    const deleteHandler = (reviewId, userId) => {
-        dispatch(deleteReview(reviewId, userId))
+    const deleteHandler = (userId, reviewId) => {
+        dispatch(deleteReview(userId, reviewId))
         window.location.reload()
-    }
+    };
 
     const [editedReview, setEditedReview] = useState(" ");
 
-    const editHandler = (reviewId, userId) => {
-        dispatch(editReview(reviewId, userId))
-    }
+    const editHandler = (reviewId, userId, editedReview) => {
+        dispatch(editReview(reviewId, userId, editedReview))
+        window.location.reload();
+    };
 
     // let isEditing;
     // let hidden;
@@ -52,33 +56,34 @@ export default function ReviewContent({reviewId, spotId}) {
     return (
         <div className="reviewContainer">
             <div className="reviewTitle">
-            <div style= {{display:"hidden"}} id="f*This">
-                <form onSubmit={editHandler}>
-                    <textarea
-                        type="textarea"
-                        value={editedReview} 
-                        onChange={(e) => setEditedReview(e.target.value)} 
-                        >
-                    </textarea>
-                    <button
-                        onClick={(e) => {editHandler(userId)
-                        e.preventDefault()
-                        document.getElementById("f*This").style.display = "none"
-                        }}>
-                            Edit</button>
-                </form>
-            </div>
             </div>
             <div className="reviewContent">
-                {filterdReviews.map((review) => 
-                    <p>{review.content}
-                        <button
-                        onClick={() => (document.getElementById("f*This").style.display = "block")}>
-                            Edit</button>
-                        <button
-                        onClick={() => (deleteHandler(userId))}>
-                            Delete</button>
-                    </p>
+                {filterdReviews.map((review) =>
+                <div> 
+                    <div style= {{display:"hidden"}} id="f*This">
+                        <form onSubmit={editHandler}>
+                            <textarea
+                                type="textarea"
+                                value={editedReview} 
+                                onChange={(e) => setEditedReview(e.target.value)} 
+                                >
+                            </textarea>
+                            <button
+                                onClick={(e) => {editHandler(review.id, userId, editedReview)
+                                e.preventDefault()
+                                document.getElementById("f*This").style.display = "none"}}>
+                                    Edit</button>
+                        </form>
+                    </div> 
+                        <p>{review.content}
+                            <button
+                            onClick={() => (document.getElementById("f*This").style.display = "block")}>
+                                Edit</button>
+                            <button
+                            onClick={() => (deleteHandler(userId, review.id))}>
+                                Delete</button>
+                        </p>
+                </div>
                 )}
             </div>
         </div>

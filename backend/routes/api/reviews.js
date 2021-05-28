@@ -34,12 +34,14 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
 //edit review
 router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
-    const {reviewId, userId} = req.body
+    const {reviewId, userId, editedReview} = req.body
     if (userId) {
-        const { content } = req.body
+        // const { content } = req.body
+
+        console.log("------------------", reviewId)
 
         const updatedReview = await Review.findByPk(reviewId)
-        updatedReview.update({content})
+        updatedReview.update({content: editedReview})
 
     }
 
@@ -50,9 +52,10 @@ router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
 //delete review
 router.delete('/', restoreUser, asyncHandler(async (req, res) => {
-    const {reviewId, userId} = req.body
+    const {userId, reviewId} = req.body
+
     if (userId) {
-        const deletedReview = await Review.findByPk(reviewId)
+        const deletedReview = await Review.findByPk(userId)
         await deletedReview.destroy()
     }
 
