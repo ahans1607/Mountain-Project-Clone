@@ -33,7 +33,7 @@ export const getReviews = () => async (dispatch) => {
     if (res.ok) {
         const reviews = await res.json();
         dispatch(load(reviews));
-        return reviews
+        // return reviews
     }
 };
 
@@ -49,8 +49,8 @@ export const addReview = (newReview) => async (dispatch) => {
     });
     if (res.ok) {
         const reviews = await res.json();
-        dispatch(load(reviews));
-        return reviews
+        dispatch(add(reviews));
+        // return reviews
     }
 };
 
@@ -66,8 +66,7 @@ export const deleteReview = (review) => async (dispatch) => {
     })
     if (res.ok) {
         const reviews = await res.json();
-        dispatch(load(reviews));
-        return reviews
+        dispatch(del(reviews));
     }
 
 }
@@ -84,8 +83,7 @@ export const editReview = (newReview) => async (dispatch) => {
     });
     if (res.ok) {
         const reviews = await res.json();
-        dispatch(load(reviews));
-        return reviews
+        dispatch(edit(reviews));
     }
 };
 
@@ -100,10 +98,7 @@ const reviewsReducer = (state = initialState, action) => {
             action.list.forEach(review => {
                 allReviews[review.id] = review;
             });
-            return {
-                ...allReviews,
-                ...state
-            };
+            return allReviews
         }
 
         case ADD: {

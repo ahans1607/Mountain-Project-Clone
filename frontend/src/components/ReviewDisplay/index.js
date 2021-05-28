@@ -1,41 +1,18 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getReviews, editReview, deleteReview } from '../../store/review';
-import './reviewDisplay.css';
-
-export default function ReviewDisplay() {
-    const dispatch = useDispatch();
-
-    const reviews = useSelector((state) => Object.values(state.reviews))
+import reviewsReducer from '../../store/review'
+import ReviewContent from '../ReviewContent/ReviewContent'
 
 
-    useEffect(() => {
-        dispatch(getReviews())
-    }, [dispatch])
 
-    useEffect(() => {
-        dispatch(editReview())
-    }, [dispatch])
+export default function ReviewDisplay({ reviews, spotId }) {
 
-    useEffect(() => {
-        dispatch(deleteReview())
-    }, [dispatch])
+
+    // const allReview = Object.values(reviews)
 
     return (
-        <div className="reviewContainer">
-            <div className="reviewTitle">
-                Reviews:
-            </div>
-            <div className="reviewContent">
-                {reviews.map((review) => 
-                    <p>{review.content}
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </p>
-                )}
-            </div>
+        <div className='reviewDisplayContain'>
+            <h2>Reviews</h2>
+             <ReviewContent spotId={spotId}/>
         </div>
     )
-
 
 }

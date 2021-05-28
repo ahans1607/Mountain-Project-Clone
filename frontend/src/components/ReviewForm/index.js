@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { addReview } from "../../store/review"
-import SignupFormPage from "../SignupFormPage";
-import { useParams } from "react-router-dom"
 
 
 function ReviewForm({spotId}) {
@@ -23,27 +20,28 @@ function ReviewForm({spotId}) {
             userId,
             content: review
       }
+      setReview("")
       dispatch(addReview(newReview))
     };
   
     return (
-      <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
-        <label>
-          <h3>
+      
+      <div className="reviewFormContain">
+          <h2>
             Have you been here?
-              Add a Review
-            </h3>
+          </h2>
+          <h3>
+            Add a Review
+          </h3>
+        <form onSubmit={handleSubmit}>
           <textarea
             type="textarea"
             value={review} 
             onChange={(e) => setReview(e.target.value)} >
           </textarea>
-        </label>
         <button type="submit">Add Review</button>
-      </form>
+        </form>
+      </div>
     );
   }
   

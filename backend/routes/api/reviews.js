@@ -23,6 +23,7 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
     
     const newReview = await Review.create({ content, userId: userId, spotId:spotId });
 
+
     return res.json(
         newReview
     );

@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSpots } from '../../store/spots';
+import { getReviews } from '../../store/review';
 import ReviewForm from "../ReviewForm"
-import ReviewContent from "../ReviewDisplay"
 import './spotPage.css';
 import ReviewDisplay from '../ReviewDisplay';
 
@@ -11,6 +11,10 @@ const SpotPage = () => {
     const dispatch = useDispatch();
 
     const Spots = useSelector(state => state.spots)
+    const Reviews = useSelector(state => state.reviews)
+
+  
+
     const { spotsId } = useParams();
 
     
@@ -19,6 +23,7 @@ const SpotPage = () => {
     
     useEffect(() => {
         dispatch(getSpots())
+        dispatch(getReviews())
     }, [dispatch]);
     
     if(!spot) return (
@@ -60,7 +65,7 @@ const SpotPage = () => {
                 <div className="spot-container3">
                     <div className="reviews">
                         <ReviewForm spotId={spotsId}/>
-                        <ReviewDisplay />
+                        <ReviewDisplay reviews={Reviews} spotId={spotsId}/>
                     </div>
                 </div>
                 
