@@ -1,4 +1,3 @@
-import reviewsReducer from '../../store/review'
 import ReviewContent from '../ReviewContent/ReviewContent'
 
 

@@ -21,8 +21,7 @@ export default function ReviewContent({review, spotId}) {
     }, [dispatch])
 
     const deleteHandler = () => {
-        dispatch(deleteReview(reviews))
-        window.location.reload()
+        dispatch(deleteReview(review))
     }
 
     return (
