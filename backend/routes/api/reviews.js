@@ -34,7 +34,7 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
 //edit review
 router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
-    const {content, reviewId, userId} = req.body
+    const {reviewId, userId} = req.body
     if (userId) {
         const { content } = req.body
 

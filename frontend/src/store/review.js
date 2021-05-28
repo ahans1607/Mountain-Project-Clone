@@ -74,7 +74,7 @@ export const deleteReview = (reviewId, userId) => async (dispatch) => {
 
 export const editReview = (content) => async (dispatch) => {
     content = JSON.stringify(content)
-    console.log(content)
+    
     const res = await csrfFetch(`/api/reviews`, {
         method: "PUT",
         body: content,

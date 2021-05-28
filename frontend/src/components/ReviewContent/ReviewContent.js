@@ -5,7 +5,7 @@ import { getReviews, editReview, deleteReview } from '../../store/review';
 
 import './reviewContent.css';
 
-export default function ReviewContent({review, spotId}) {
+export default function ReviewContent({reviewId, spotId}) {
     const dispatch = useDispatch();
 
     const reviews = useSelector((state) => Object.values(state.reviews))
@@ -25,21 +25,58 @@ export default function ReviewContent({review, spotId}) {
         window.location.reload()
     }
 
+    const [editedReview, setEditedReview] = useState(" ");
+
     const editHandler = (reviewId, userId) => {
         dispatch(editReview(reviewId, userId))
-        window.location.reload()
     }
+
+    // let isEditing;
+    // let hidden;
+
+    // if(isEditing) {
+    //     hidden = "block"
+    // } else {
+    //     hidden = "none"
+    // }
+
+    // const editSwitch = () => {
+    //     if(isEditing){
+    //         isEditing = false
+    //     } else {
+    //         isEditing = true
+    //     }
+    // }
+
 
     return (
         <div className="reviewContainer">
             <div className="reviewTitle">
+            <div style= {{display:"hidden"}} id="f*This">
+                <form onSubmit={editHandler}>
+                    <textarea
+                        type="textarea"
+                        value={editedReview} 
+                        onChange={(e) => setEditedReview(e.target.value)} 
+                        >
+                    </textarea>
+                    <button
+                        onClick={(e) => {editHandler(userId)
+                        e.preventDefault()
+                        document.getElementById("f*This").style.display = "none"
+                        }}>
+                            Edit</button>
+                </form>
+            </div>
             </div>
             <div className="reviewContent">
                 {filterdReviews.map((review) => 
                     <p>{review.content}
-                        <button>Edit</button>
                         <button
-                        onClick={() => (deleteHandler(review.id, userId))}>
+                        onClick={() => (document.getElementById("f*This").style.display = "block")}>
+                            Edit</button>
+                        <button
+                        onClick={() => (deleteHandler(userId))}>
                             Delete</button>
                     </p>
                 )}

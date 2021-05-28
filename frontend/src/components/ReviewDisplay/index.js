@@ -12,7 +12,6 @@ export default function ReviewDisplay({ reviews, spotId }) {
         <div className='reviewDisplayContain'>
             <h2>Reviews</h2>
              <ReviewContent spotId={spotId}/>
-             <ReviewForm />
         </div>
     )
 
