@@ -1,11 +1,13 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { requireAuth, restoreUser } = require('../../utils/auth')
+const { restoreUser } = require('../../utils/auth')
+
 
 const router = express.Router();
 
 const { Review } = require('../../db/models')
-const { User } = require('../../db/models')
+const { User } = require('../../db/models');
+// const { formatNamedParameters } = require('sequelize/types/lib/utils');
 
 //get all reviews
 router.get('/', asyncHandler(async (req, res) => {
@@ -32,12 +34,12 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
 //edit review
 router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
-    if (req.user.id === req.body.user_id) {
-        const { newDescription } = req.body
+    const {content, reviewId, userId} = req.body
+    if (userId) {
+        const { content } = req.body
 
-        const updatedReview = await Review.findByPk()
-        updatedReview.content = newContent
-        await updatedReview.save()
+        const updatedReview = await Review.findByPk(reviewId)
+        updatedReview.update({content})
 
     }
 
@@ -48,8 +50,9 @@ router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
 //delete review
 router.delete('/', restoreUser, asyncHandler(async (req, res) => {
-    if (req.user.id === req.body.user_id) {
-        const deletedReview = await Review.findByPk(req.body.id)
+    const {reviewId, userId} = req.body
+    if (userId) {
+        const deletedReview = await Review.findByPk(reviewId)
         await deletedReview.destroy()
     }
 

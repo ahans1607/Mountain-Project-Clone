@@ -54,16 +54,16 @@ export const addReview = (newReview) => async (dispatch) => {
     }
 };
 
-export const deleteReview = (review) => async (dispatch) => {
-    const { id } = review
-    review = JSON.stringify(review)
-    const res = await csrfFetch(`/api/reviews/`, {
+export const deleteReview = (reviewId, userId) => async (dispatch) => {
+    // review = JSON.stringify(review)
+    const res = await csrfFetch(`/api/reviews`, {
         method: "DELETE",
-        body: review,
+        body: JSON.stringify({reviewId, userId}),
         headers: {
             'Content-Type': "application/json"
         }
-    })
+    });
+
     if (res.ok) {
         const reviews = await res.json();
         dispatch(del(reviews));
@@ -72,11 +72,12 @@ export const deleteReview = (review) => async (dispatch) => {
 }
 
 
-export const editReview = (newReview) => async (dispatch) => {
-    newReview = JSON.stringify(newReview)
+export const editReview = (content) => async (dispatch) => {
+    content = JSON.stringify(content)
+    console.log(content)
     const res = await csrfFetch(`/api/reviews`, {
         method: "PUT",
-        body: newReview,
+        body: content,
         headers: {
             "Content-Type": "application/json"
         }

@@ -22,6 +22,7 @@ function ReviewForm({spotId}) {
       }
       setReview("")
       dispatch(addReview(newReview))
+      window.location.reload();
     };
   
     return (
